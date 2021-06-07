@@ -1,0 +1,8 @@
+.fivedaybox {
+    border: 2px solid black;
+    margin: 5px;
+}
+
+#fivedayforecast {
+    display: flex;
+}

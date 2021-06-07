@@ -3,7 +3,7 @@
 <head>
 <meta charset="en">
 <title>Weather Dashboard</title>
-<!-- <link rel="stylesheet" href="stylesheet.css"> -->
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,15 +16,20 @@
 
 <div id="currentWeather">
     <h1 id=cityName></h1>
-    <p>Temperature: <span id="temperature"></span></p>
-    <p id="humidity">Humidity: </p>
-    <p id="windSpeed">Wind Speed: </p>
+    <p>Temperature: <span id="temp"></span></p>
+    <p>Humidity: <span id="humidity"></span></p>
+    <p>Wind Speed: <span id="windSpeed"></span> MPH</p>
     <p>UV Index: <span id="uvInd"></span></p>
 </div>
 
 <div id="fivedayforecast">
-
+  
 </div>
+
+<aside id="history">
+  <h2>Recent Searches</h2>
+  <ul id="searchList"></ul>
+</aside>
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"

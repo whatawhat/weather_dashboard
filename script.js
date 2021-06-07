@@ -2,6 +2,7 @@ const startButton = $("#searchButton")
 //console.log("This is the button", startButton)
 startButton.click(function() {
     const searchInput = $("#searchValue").val();
+    recentSearch (searchInput);
     var apiKey = `http://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=imperial&appid=57b85d9f6f550dd234e00f49ef09169c`
     //console.log("This is the input", searchInput)
     $.ajax({
@@ -25,8 +26,8 @@ startButton.click(function() {
                 url:oneCallApiKey,
                 method: "GET",
                 success: function(data){
-                    //console.log("This is the One Call API Key!", data)
-                    //console.log("This is the UV Index", data.current.uvi)
+                    console.log("This is the One Call API Key!", data)
+                    console.log("This is the UV Index", data.current.uvi)
                     var uvElement = $("#uvInd")
                     if (data.current.uvi <= 2) {
                         uvElement.css("background-color", "green")
@@ -39,7 +40,34 @@ startButton.click(function() {
                     uvElement.text(data.current.uvi)
                     //5 day forecast
                     var fiveDay = $("#fivedayforecast")
-                    fiveDay.text(data.daily.temp)
+                    fiveDay.empty();
+                    //fiveDay.text(data.daily[1].humidity)
+                    //console.log("this is the daily humidity for day 1", data.daily[1].humidity)
+                    //fiveDay.text(data.daily[2].humidity)
+                    //fiveDay.text(data.daily[3].humidity)
+                    //fiveDay.text(data.daily[4].humidity)
+                    //fiveDay.text(data.daily[5].humidity)
+                    
+
+                    for (var i = 1; i < 6; i++) {
+                        //fiveDay.text(data.daily[i].humidity)
+                        console.log(data.daily[i])
+                        var divElement = $('<div class=fivedaybox></div>')
+                        var dateElement = $('<p></p>')
+                        var datefive = moment.unix(data.daily[i].dt).format("MM/DD/YYYY");
+                        dateElement.text(datefive);
+                        var iconElement = $(`<img src="http://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png"/>`)
+                        var tempElement = $('<p></p>')
+                        var tempfive = data.daily[i].temp.day;
+                        tempElement.text(tempfive);
+                        var humidityElement = $('<p></p>')
+                        humidityElement.text(data.daily[i].humidity);
+                        divElement.append(dateElement, iconElement, tempElement, humidityElement);
+                        fiveDay.append(divElement);
+
+                        //tempterature, humidity, date, icon
+                    }
+
 
 
                 }
@@ -50,4 +78,10 @@ startButton.click(function() {
 
     })
 });
+
+function recentSearch(searchvalue) {
+    var listElement = $('<li></li>')
+    listElement.text(searchvalue);
+    $('#searchList').append(listElement)
+};
 
