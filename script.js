@@ -85,3 +85,24 @@ function recentSearch(searchvalue) {
     $('#searchList').append(listElement)
 };
 
+var searchListStr = JSON.stringify(searchInput);
+
+console.log(searchListStr);
+
+console.log(JSON.parse(searchListStr));
+
+//need .push to add additional search values
+//to append new value use variableName.push(what to add)
+
+
+//Get #searchList and get it to local storage
+
+//var fakeSearchItems = ['Miami', 'Dallas', 'New York'];
+// window.localStorage.setItem('search', fakeSearchItems)
+// var practice = JSON.parse(fakeSearchItems)
+// console.log(practice);
+
+//console.log(typeof window.localStorage.getItem('search'))
+
+//JSON.stringify
+//JSON.parse
