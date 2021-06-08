@@ -1,7 +1,9 @@
 const startButton = $("#searchButton")
 //console.log("This is the button", startButton)
+let searchInputElement = $("#searchValue");
+
 startButton.click(function() {
-    const searchInput = $("#searchValue").val();
+    let searchInput = searchInputElement.val();
     recentSearch (searchInput);
     var apiKey = `http://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=imperial&appid=57b85d9f6f550dd234e00f49ef09169c`
     //console.log("This is the input", searchInput)
@@ -43,10 +45,6 @@ startButton.click(function() {
                     fiveDay.empty();
                     //fiveDay.text(data.daily[1].humidity)
                     //console.log("this is the daily humidity for day 1", data.daily[1].humidity)
-                    //fiveDay.text(data.daily[2].humidity)
-                    //fiveDay.text(data.daily[3].humidity)
-                    //fiveDay.text(data.daily[4].humidity)
-                    //fiveDay.text(data.daily[5].humidity)
                     
 
                     for (var i = 1; i < 6; i++) {
@@ -68,13 +66,10 @@ startButton.click(function() {
                         //tempterature, humidity, date, icon
                     }
 
-
-
                 }
             })
 
         }
-    
 
     })
 });
@@ -85,11 +80,20 @@ function recentSearch(searchvalue) {
     $('#searchList').append(listElement)
 };
 
-var searchListStr = JSON.stringify(searchInput);
+var searchListStr = JSON.parse(searchInputElement.val());
+
 
 console.log(searchListStr);
 
-console.log(JSON.parse(searchListStr));
+//console.log(JSON.parse(searchListStr));
+
+//To Do
+//Take search input
+//Add it to an array
+//Any new searches are pushed to the array
+//Searches are listed in recent searches
+//Cities are clickable
+//Clear search box after search button is clicked
 
 //need .push to add additional search values
 //to append new value use variableName.push(what to add)
@@ -106,3 +110,4 @@ console.log(JSON.parse(searchListStr));
 
 //JSON.stringify
 //JSON.parse
+
