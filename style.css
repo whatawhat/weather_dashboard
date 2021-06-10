@@ -6,3 +6,7 @@
 #fivedayforecast {
     display: flex;
 }
+
+#currentWeather {
+    display: none;
+}
