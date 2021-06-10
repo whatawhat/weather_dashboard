@@ -94,8 +94,15 @@ function recentSearch() {
         listElement.text(recentSearches[i]);
         $("#searchList").append(listElement);
     }
+    $('#searchList').click(function() {
+        alert("clicked it");
+        //I want the word clicked to go into the searchInput and run through the function again
+
+    });
 
 }
+
+
 
 //var searchListStr = JSON.parse(searchInputElement.val());
 
