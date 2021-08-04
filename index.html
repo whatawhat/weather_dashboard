@@ -15,34 +15,49 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-<h1 class="text-center">Weather Dashboard</h1>
+<body style="background-color: rgb(190, 223, 190);">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-5 text-center">Weather Dashboard</h1>
+    </div>
+  </div>
 
-<div class="row">
-  <div class="col-3">
-<div id="searchWeather">
-    <input type="text" id="searchValue" placeholder="Enter City Here"/>
-    <button type="submit" id="searchButton">Search</button>
-</div>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 m-75 search">
+      <div id="searchWeather">
+        <input type="text" class="form-control" id="searchValue" placeholder="Enter City Here"/>
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary" type="submit" id="searchButton">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div id="currentWeather">
+<div class="container">
+  <div class="list-group" id="currentWeather">
     <h1 id=cityName></h1>
     <p>Temperature: <span id="temp"></span></p>
     <p>Humidity: <span id="humidity"></span></p>
     <p>Wind Speed: <span id="windSpeed"></span> MPH</p>
     <p>UV Index: <span id="uvInd"></span></p>
+  </div>
 </div>
 
-<div id="fivedayforecast">
-  
+<div class="container">
+  <div class="column-12 row">
+    <div class="card" style="width:100%" id="fivedayforecast">
+    </div>
+  </div>
 </div>
 
-<aside id="history">
-  <h2>Recent Searches</h2>
-  <ul id="searchList"></ul>
-</aside>
+<div class="container">
+  <aside class="row" id="history">
+    <h2 class="col-3">Recent Searches</h2>
+    <ul id="searchList"></ul>
+  </aside>
+</div>
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
