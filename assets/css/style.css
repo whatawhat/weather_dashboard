@@ -1,0 +1,36 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+#title {
+    background-color: #D0EFB1;
+}
+#searchWeather {
+    font-size: 65%;
+}
+
+h2 {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.fivedaybox {
+    /* flex-direction: column; */
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    font-size: large;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+#fivedayforecast {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+
+#currentWeather {
+    display: none;
+    text-align: center;
+}
