@@ -13,9 +13,12 @@ h2 {
     font-size: 140%;
     font-weight: bold;
 }
+
 .fivedaybox {
+    /* flex-direction: column; */
     border: 2px solid black;
-    margin: 5px;
+    padding: 10px;
+    margin: 10px;
     font-size: large;
     text-align: center;
     font-family: 'Nunito', sans-serif;
@@ -23,6 +26,8 @@ h2 {
 
 #fivedayforecast {
     display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
 }
 
 #currentWeather {
