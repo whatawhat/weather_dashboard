@@ -65,7 +65,7 @@ function weatherResults(searchInput) {
               var tempfive = data.daily[i].temp.day;
               tempElement.text(tempfive);
               var humidityElement = $("<p></p>");
-              humidityElement.text(data.daily[i].humidity);
+              humidityElement.text(data.daily[i].humidity + "%");
               divElement.append(
                 dateElement,
                 iconElement,
