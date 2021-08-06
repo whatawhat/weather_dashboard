@@ -3,6 +3,9 @@
 <head>
 <meta charset="en">
 <title>Weather Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
@@ -15,8 +18,8 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color: rgb(190, 223, 190);">
-  <div class="jumbotron jumbotron-fluid">
+<body style="background-color: #B3D89C;">
+  <div id="title" class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-5 text-center">Weather Dashboard</h1>
     </div>
@@ -38,14 +41,18 @@
 <div class="container">
   <div class="list-group" id="currentWeather">
     <h1 id=cityName></h1>
-    <p>Temperature: <span id="temp"></span></p>
+    <p>Temperature: <span id="temp"></span> &#8457</p>
     <p>Humidity: <span id="humidity"></span></p>
     <p>Wind Speed: <span id="windSpeed"></span> MPH</p>
     <p>UV Index: <span id="uvInd"></span></p>
   </div>
 </div>
 
+<div>
+  <ul id="history" class="list-group custom-cl">
 
+  </ul>
+</div>
 
 <div class="container">
   <div class="row">
@@ -53,7 +60,7 @@
       <h2>Recent Searches</h2>
       <ul id="searchList"></ul>
     </div>
-    <div class="col-md-9" id="fivedayforecast">
+    <div class="col-md-9 justify-content-end" id="fivedayforecast">
     </div>
   </div>
 </div>
