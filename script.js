@@ -45,6 +45,7 @@ function weatherResults(searchInput) {
               uvElement.css("background-color", "red");
             }
             uvElement.text(data.current.uvi);
+            
             //5 day forecast
             var fiveDay = $("#fivedayforecast");
             fiveDay.empty();
@@ -62,7 +63,7 @@ function weatherResults(searchInput) {
                 `<img src="http://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png"/>`
               );
               var tempElement = $("<p></p>");
-              var tempfive = data.daily[i].temp.day;
+              var tempfive = data.daily[i].temp.day + " F";
               tempElement.text(tempfive);
               var humidityElement = $("<p></p>");
               humidityElement.text(data.daily[i].humidity + "%");
