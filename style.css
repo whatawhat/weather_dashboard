@@ -8,6 +8,11 @@ body {
 #searchWeather {
     font-size: 65%;
 }
+
+h2 {
+    font-size: 140%;
+    font-weight: bold;
+}
 .fivedaybox {
     border: 2px solid black;
     margin: 5px;
