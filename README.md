@@ -6,7 +6,7 @@
 - [Sources](#sources)
 
 ## Description
-This is an application that allows the user to input data for their team via the terminal and then an HTML file is generated.
+Enter a city and see the weather for the next 5 days. Search another city and watch the previous cities in the recent searches section. 
 
 ## Technologies Used
 ```
